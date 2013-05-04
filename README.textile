@@ -1,0 +1,32 @@
+h1. Setup
+
+<pre>
+  rabbitmqctl add_user matcherapp.com ae28cd87adb5c385117f89e9bd452d18
+  rabbitmqctl add_vhost matcherapp.com
+
+  # Give full access to configure, write and read the virtual host to the user.
+  rabbitmqctl set_permissions -p matcherapp.com matcherapp.com ".*" ".*" ".*"
+</pre>
+
+h1. Inspect RabbitMQ
+
+"RabbitMQ Management plugin":http://localhost:15672/
+
+h1. Making Sure It Works
+
+<pre>
+[T#1] echo -ne "\033]0;Logs\007"
+[T#1] ./bin/loggingd.development.sh
+
+[T#2] rerun ./app.rb -sv
+[T#2] echo -ne "\033]0;SSE (simulating browser)\007"
+[T#2] curl http://localhost:9000/ -v
+
+[T#3] echo -ne "\033]0;Duplicated Event Queue\007"
+[T#3] ./bin/inspect.rb
+
+[T#4] ./bin/send.rb 'Hello World!'
+[T#4] ./bin/send.rb 'Hello Again!'
+</pre>
+
+Now you should get both messages in the @./bin/inspect.rb@ as well as in the curl window. That means everything works.
