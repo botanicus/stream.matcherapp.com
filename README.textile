@@ -1,11 +1,11 @@
 h1. Setup
 
 <pre>
-  rabbitmqctl add_user matcherapp.com ae28cd87adb5c385117f89e9bd452d18
-  rabbitmqctl add_vhost matcherapp.com
+rabbitmqctl add_user matcherapp.com ae28cd87adb5c385117f89e9bd452d18
+rabbitmqctl add_vhost matcherapp.com
 
-  # Give full access to configure, write and read the virtual host to the user.
-  rabbitmqctl set_permissions -p matcherapp.com matcherapp.com ".*" ".*" ".*"
+# Give full access to configure, write and read the virtual host to the user.
+rabbitmqctl set_permissions -p matcherapp.com matcherapp.com ".*" ".*" ".*"
 </pre>
 
 h1. Inspect RabbitMQ
