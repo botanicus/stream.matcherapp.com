@@ -14,6 +14,7 @@ class SSE < Goliath::API
     @app ||= Stream.new
   end
 
+  # Subscribe to stream.ideas.
   def response(env)
     self.app.subscribe do |payload|
       env.stream_send("data: #{payload}\n\n")
