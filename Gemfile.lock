@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/botanicus/logging4hackers.git
-  revision: 056dbc7660a35bf3864dc6b755fea4a851fc3ebd
+  revision: 7e4faad69e76567a4ab2760db2a424054a0b4815
   specs:
-    logging4hackers (0.0.1)
+    logging4hackers (0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -11,7 +11,7 @@ GEM
     amq-client (1.0.2)
       amq-protocol (>= 1.2.0)
       eventmachine
-    amq-protocol (1.4.0)
+    amq-protocol (1.5.0)
     async-rack (0.5.1)
       rack (~> 1.1)
     coderay (1.0.9)
@@ -34,7 +34,7 @@ GEM
       rack-respond_to
     http_parser.rb (0.5.3)
     log4r (1.1.10)
-    multi_json (1.7.2)
+    multi_json (1.7.3)
     rack (1.5.2)
     rack-accept-media-types (0.9)
     rack-contrib (1.1.0)
